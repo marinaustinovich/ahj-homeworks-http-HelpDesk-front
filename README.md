@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/3elmty4kl7rh1r4k/branch/main?svg=true)](https://ci.appveyor.com/project/marinaustinovich/ahj-homeworks-http-helpdesk-front/branch/main)
 
 ### HelpDesk: Frontend
 
