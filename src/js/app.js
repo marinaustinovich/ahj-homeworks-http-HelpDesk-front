@@ -1,7 +1,8 @@
-import startHelpDesk from './fetch/startHelpDesk';
+import HelpDesk from './HelpDesk';
 
-/* eslint-disable */
-console.log('it works!');
+const root = document.getElementById('root');
+const url = 'http://localhost:3000/';
 
-// the second task about HelpDesk
-document.addEventListener('DOMContentLoaded', () => startHelpDesk())
+const app = new HelpDesk(root, url);
+
+app.init();

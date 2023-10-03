@@ -24,7 +24,7 @@ h1 {
 
 .input {
   display: inline-block;
-  padding: .55rem;
+  padding: 0.55rem;
   font-size: 1rem;
   line-height: 1.5;
   color: rgb(94, 85, 85);
@@ -38,7 +38,7 @@ input:focus {
 }
 
 .input::placeholder {
-  color:rgb(190, 196, 196);
+  color: rgb(190, 196, 196);
 }
 
 .btn {
@@ -46,7 +46,7 @@ input:focus {
   min-width: 6rem;
   text-align: center;
   vertical-align: middle;
-  padding: .15rem;
+  padding: 0.15rem;
   font-size: 1rem;
   line-height: 1.5;
   color: black;
@@ -56,18 +56,31 @@ input:focus {
   user-select: none;
 }
 
+.btn:hover {
+  cursor: pointer;
+  border-color: rgb(4, 102, 4);
+  color: rgb(4, 102, 4);
+}
+
+.btn-add:hover {
+  border-color: rgb(179, 0, 0);
+  color: rgb(179, 0, 0);
+}
+
 .add {
   border: 1px solid black;
+  background-color: #fbfbfb;
   padding: 1rem;
   border-radius: 1.1rem;
 }
-  /* for form */
+/* for form */
 .ticket-form-container {
   display: none;
   position: absolute;
   z-index: 999;
   transform: translate(-50%, -50%);
   left: 50%;
+  top: 40%;
 }
 
 form {
@@ -79,26 +92,13 @@ form {
   margin-bottom: 0.5rem;
 }
 
-.form-error {
-  display: none;
-  position: absolute;
-  padding: 5px 10px;
-  margin-left: 5px;
-  width: 200px;
+.error {
   background-color: #f5f2f2;
   border: 2px solid #fa0a0a;
-  border-radius: 5px;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
-  z-index: 999;
-}
-
-.form-error_visible {
-  display: block;
 }
 
 /* for table */
 .table {
-  width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
   table-layout: fixed;
@@ -108,63 +108,82 @@ thead th {
   padding: 5px;
 }
 
-th {
-  word-break: break-all;
-}
-
 .tickets {
   font-size: 1.2rem;
   height: 4rem;
 }
 
 tbody {
-  background-color: #f1f1f0;;
-  border: 1px solid black;
+  display: block;
+  min-height: 40vh;
+  width: 100%;
+  background-color: #ddddd6;
   font-weight: 400;
-  color:#4d4949
+  color: #4d4949;
 }
 
 .ticket-row {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+  min-width: 500px;
+  background-color: rgb(220, 228, 228);
   border-bottom: 1px solid black;
 }
+
+.ticket-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ticket-description {
+  display: none;
+  padding-top: 30px;
+  text-align: left;
+}
+
 .update {
   margin-right: 5px;
 }
 
-.update, .delete {
+.update,
+.delete {
   border: 1px solid black;
   border-radius: 50%;
   padding: 0.25rem;
 }
 
+.update:hover,
+.delete:hover,
+.done:hover {
+  cursor: pointer;
+  color: #b30b0b;
+  border-color: #b30b0b;
+}
+
 .ticket-name {
   position: relative;
-  padding: 1rem 0;
+  display: block;
   text-align: left;
 }
 
 .done {
+  display: flex;
+  align-self: flex-start;
+  padding: 5px;
   font-size: 1.25rem;
   font-weight: 900;
-  left: 0.75rem;
-  position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   text-align: center;
-  /*padding: 0.35rem;*/
   border: 1px solid black;
   border-radius: 50%;
-  display: block;
-  top: 0.75rem;
 }
 
-.ticket-created, .ticket-actions {
-  vertical-align: top;
-  padding-top: 1rem;
-  padding-right: 1rem;
-  text-align: right;
-}
 .ticket-btn {
   margin-top: 0.5rem;
 }
@@ -174,13 +193,16 @@ tbody {
   position: absolute;
   left: 50%;
   z-index: 999;
-  border: 1px solid #570808;
+  border: 1px solid #df0c0c;
   padding: 10px;
   background-color: #ebe5e5;
   transform: translate(-50%, -50%);
+  top: 25%;
 }
 
-.ticket-form-container_visible, .delete-message_visible, .ticket-description_visible {
+.ticket-form-container_visible,
+.delete-message_visible,
+.ticket-description_visible {
   display: block;
 }
 
@@ -189,7 +211,6 @@ tbody {
   border: 1px solid #696363;
   padding: 10px;
   background-color: #dddada;
-
 }
 
 .form-ticket {
@@ -200,8 +221,9 @@ tbody {
 
 textarea {
   resize: none;
-  overflow:auto;
+  overflow: auto;
 }
+
 .ticket-form-error {
   z-index: 10000;
 }
@@ -213,18 +235,18 @@ textarea {
 }
 
 .input-ticket {
-  border-radius: 1.25rem
+  border-radius: 1.25rem;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .btn-add {
   background-color: #e4e1e1;
-  color:#363232;
+  color: #363232;
   border-radius: 25px;
 }
 
